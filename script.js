@@ -9,11 +9,14 @@ function guardarProgreso() {
 function renderMalla() {
   malla.innerHTML = "";
 
-  for (let s = 1; s <= 3; s++) {
+  for (let s = 1; s <= 10; s++) {
+    const columna = document.createElement("div");
+    columna.className = "column";
+
     const semTitle = document.createElement("div");
     semTitle.className = "semestre";
     semTitle.textContent = `Semestre ${s}`;
-    malla.appendChild(semTitle);
+    columna.appendChild(semTitle);
 
     const ramosSemestre = ramos.filter(r => r.semestre === s);
 
@@ -21,6 +24,7 @@ function renderMalla() {
       const div = document.createElement("div");
       div.className = "ramo";
       div.textContent = `${ramo.nombre}`;
+
       const creditos = document.createElement("div");
       creditos.className = "creditos";
       creditos.textContent = `${ramo.creditos} créditos`;
@@ -48,8 +52,10 @@ function renderMalla() {
         renderMalla();
       });
 
-      malla.appendChild(div);
+      columna.appendChild(div);
     }
+
+    malla.appendChild(columna);
   }
 }
 
