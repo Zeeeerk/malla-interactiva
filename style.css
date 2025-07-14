@@ -8,14 +8,24 @@ h1 {
 }
 #malla {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 40px;
+}
+.semestre {
+  min-width: 250px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .ramo {
-  background: white;
-  border: 1px solid #ccc;
+  background: #d0e7ff;
+  border: 1px solid #0077cc;
   padding: 10px;
-  width: 200px;
   border-radius: 10px;
   cursor: pointer;
   position: relative;
@@ -29,13 +39,8 @@ h1 {
   opacity: 0.5;
   cursor: not-allowed;
 }
-.semestre {
-  width: 100%;
-  margin-top: 20px;
-  font-weight: bold;
-  border-bottom: 1px solid #aaa;
-}
 .creditos {
   font-size: 0.9em;
-  color: #666;
+  color: #333;
+  margin-top: 5px;
 }
