@@ -74,7 +74,6 @@ const ramos = [
 
 
   // SEMESTRE X
-  { id: "electivo_prof8", nombre: "Electivo Profesional", creditos: 5, prerreq: [], semestre: 10 },
-  { id: "electivo_prof9", nombre: "Electivo Profesional", creditos: 5, prerreq: [], semestre: 10 },
-  { id: "capstone", nombre: "Capstone Project", creditos: 10, prerreq: [], semestre: 10 }
+ { id: "capstone", nombre: "Capstone Project", creditos: 30, prerreq: [], semestre: 10 }
+
 ];
