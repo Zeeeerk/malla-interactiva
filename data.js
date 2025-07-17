@@ -61,19 +61,17 @@ const ramos = [
   { id: "gestion_activos", nombre: "Gestión de Activos", creditos: 5, prerreq: ["cadena_suministro1"], semestre: 8 },
   { id: "electivo_prof3", nombre: "Electivo Profesional", creditos: 5, prerreq: [], semestre: 8 },
 
-  // SEMESTRE IX
-{ id: "electivo_prof4", nombre: "Electivo Profesional", creditos: 5, prerreq: [], semestre: 9 },
-{ id: "electivo_prof5", nombre: "Electivo Profesional", creditos: 5, prerreq: [], semestre: 9 },
-{ id: "electivo_prof6", nombre: "Electivo Profesional", creditos: 5, prerreq: [], semestre: 9 },
-{ id: "electivo_prof7", nombre: "Electivo Profesional", creditos: 5, prerreq: [], semestre: 9 },
-{ id: "electivo_prof10", nombre: "Electivo Profesional", creditos: 5, prerreq: [], semestre: 9 },
-{ id: "electivo_prof11", nombre: "Electivo Profesional", creditos: 5, prerreq: [], semestre: 9 },
-{ id: "electivo_prof12", nombre: "Electivo Profesional", creditos: 5, prerreq: [], semestre: 9 },
-{ id: "electivo_prof13", nombre: "Electivo Profesional", creditos: 5, prerreq: [], semestre: 9 },
-{ id: "electivo_prof14", nombre: "Electivo Profesional", creditos: 5, prerreq: [], semestre: 9 },
-
+ // SEMESTRE IX (9 electivos)
+  { id: "electivo_prof4", nombre: "Electivo Profesional", creditos: 5, prerreq: [], semestre: 9 },
+  { id: "electivo_prof5", nombre: "Electivo Profesional", creditos: 5, prerreq: [], semestre: 9 },
+  { id: "electivo_prof6", nombre: "Electivo Profesional", creditos: 5, prerreq: [], semestre: 9 },
+  { id: "electivo_prof7", nombre: "Electivo Profesional", creditos: 5, prerreq: [], semestre: 9 },
+  { id: "electivo_prof8", nombre: "Electivo Profesional", creditos: 5, prerreq: [], semestre: 9 },
+  { id: "electivo_prof9", nombre: "Electivo Profesional", creditos: 5, prerreq: [], semestre: 9 },
+  { id: "electivo_prof10", nombre: "Electivo Profesional", creditos: 5, prerreq: [], semestre: 9 },
+  { id: "electivo_prof11", nombre: "Electivo Profesional", creditos: 5, prerreq: [], semestre: 9 },
+  { id: "electivo_prof12", nombre: "Electivo Profesional", creditos: 5, prerreq: [], semestre: 9 },
 
   // SEMESTRE X
- { id: "capstone", nombre: "Capstone Project", creditos: 30, prerreq: [], semestre: 10 }
-
+  { id: "capstone", nombre: "Capstone Project", creditos: 10, prerreq: [], semestre: 10 }
 ];
