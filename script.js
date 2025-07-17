@@ -10,53 +10,57 @@ function renderMalla() {
   malla.innerHTML = "";
 
   for (let s = 1; s <= 10; s++) {
-    const columna = document.createElement("div");
-    columna.className = "column";
+  const columna = document.createElement("div");
+  columna.className = "column";
 
-    const semTitle = document.createElement("div");
-    semTitle.className = "semestre";
-    semTitle.textContent = `Semestre ${s}`;
-    columna.appendChild(semTitle);
+  const semTitle = document.createElement("div");
+  semTitle.className = "semestre";
+  semTitle.textContent = `Semestre ${s}`;
+  columna.appendChild(semTitle);
 
-    const ramosSemestre = ramos.filter(r => r.semestre === s);
+  const ramosSemestre = ramos.filter(r => r.semestre === s);
+  let totalCreditos = 0;
 
-    for (const ramo of ramosSemestre) {
-      const div = document.createElement("div");
-      div.className = "ramo";
-      div.textContent = `${ramo.nombre}`;
+  for (const ramo of ramosSemestre) {
+    const div = document.createElement("div");
+    div.className = "ramo";
+    div.textContent = `${ramo.nombre}`;
 
-      const creditos = document.createElement("div");
-      creditos.className = "creditos";
-      creditos.textContent = `${ramo.creditos} créditos`;
-      div.appendChild(creditos);
+    const creditos = document.createElement("div");
+    creditos.className = "creditos";
+    creditos.textContent = `${ramo.creditos} créditos`;
+    div.appendChild(creditos);
 
-      const habilitado = ramo.prerreq.every(p => progreso.includes(p));
-      if (!habilitado && !progreso.includes(ramo.id)) {
-        div.classList.add("bloqueado");
-      }
-
-      if (progreso.includes(ramo.id)) {
-        div.classList.add("aprobado");
-      }
-
-      div.addEventListener("click", () => {
-        if (div.classList.contains("bloqueado")) return;
-
-        if (progreso.includes(ramo.id)) {
-          progreso = progreso.filter(x => x !== ramo.id);
-        } else {
-          progreso.push(ramo.id);
-        }
-
-        guardarProgreso();
-        renderMalla();
-      });
-
-      columna.appendChild(div);
+    const habilitado = ramo.prerreq.every(p => progreso.includes(p));
+    if (!habilitado && !progreso.includes(ramo.id)) {
+      div.classList.add("bloqueado");
     }
 
-    malla.appendChild(columna);
-  }
-}
+    if (progreso.includes(ramo.id)) {
+      div.classList.add("aprobado");
+    }
 
-renderMalla();
+    div.addEventListener("click", () => {
+      if (div.classList.contains("bloqueado")) return;
+
+      if (progreso.includes(ramo.id)) {
+        progreso = progreso.filter(x => x !== ramo.id);
+      } else {
+        progreso.push(ramo.id);
+      }
+
+      guardarProgreso();
+      renderMalla();
+    });
+
+    totalCreditos += ramo.creditos;
+    columna.appendChild(div);
+  }
+
+  const contador = document.createElement("div");
+  contador.className = "total-creditos";
+  contador.textContent = `Total créditos: ${totalCreditos}`;
+  columna.appendChild(contador);
+
+  malla.appendChild(columna);
+}
